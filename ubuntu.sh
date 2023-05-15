@@ -2,7 +2,7 @@
 
 #Author: Edvaldo Siqueira - contato.edvaldosiqueira@gmail.com
 #Discribe: Script Automatizado para atualização em distribuições Linux baseadas em Debian.
-#Version: 2.0
+#Version: 3.0
 #License: GPL
 
 RED='\033[1;31m'
@@ -27,16 +27,22 @@ echo -e "${GREEN}   *** ATUALIZAÇÃO CONCLUÍDA ***${NC}";sleep 2
 # Instalando o nala -Download de pacotes mais rapidos-
 sudo apt install -y nala
 
+echo -e "${GREEN}   *** INSTALAÇÃO NALA CONCLUIDA ***${NC}";sleep 2
+
 #-------------------------------------------------------------------------------------------------------
 
 # Atualizando o sistema usando o nala
 sudo nala update
 sudo nala upgrade
 
+echo -e "${GREEN}   *** ATUALIZAÇÃO (NALA) CONCLUIDA ***${NC}";sleep 2
+
 #-------------------------------------------------------------------------------------------------------
 
 # instalando pacotes basicos usando o nala
-sudo nala install stacer preload prelink neovim ubuntu-restricted-extras ubuntu-drivers-common tlp curl git vlc wget
+sudo nala install timeshift stacer preload prelink neovim ubuntu-restricted-extras ubuntu-drivers-common tlp curl git vlc wget
+
+echo -e "${GREEN}   *** INSTALAÇÃO DE PACOTES BASICOS E DRIVERS CONCLUIDA ***${NC}";sleep 2
 
 #-------------------------------------------------------------------------------------------------------
 
@@ -46,6 +52,8 @@ sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://b
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 sudo nala update
 sudo nala install brave-browser
+
+echo -e "${GREEN}   *** INSTALAÇÃO NAVEGADOR BRAVE CONCLUIDA ***${NC}";sleep 2
 
 #-------------------------------------------------------------------------------------------------------
 
@@ -57,6 +65,8 @@ wget https://download.anydesk.com/linux/anydesk_6.2.1-1_amd64.deb
 # Instalando apps 
 sudo dpkg -i *.deb
 sudo nala install -f
+
+echo -e "${GREEN}   *** INSTALAÇÃO ONLYOFFICE/VSCODE/ANYDESK CONCLUIDA ***${NC}";sleep 2
 
 #--------------------------------------------------------------------------------------------------------
 
@@ -104,10 +114,3 @@ case $CONFIRMA in
         echo -e "${RED}   *** OPÇÃO INVÁLIDA ***${NC}"
     ;;
 esac 
-
-
-
-
-
-
-
