@@ -40,20 +40,9 @@ echo -e "${GREEN}   *** ATUALIZAÇÃO (NALA) CONCLUIDA ***${NC}";sleep 2
 #-------------------------------------------------------------------------------------------------------
 
 # instalando pacotes basicos usando o nala
-sudo nala install timeshift stacer preload prelink neovim ubuntu-restricted-extras ubuntu-drivers-common tlp curl git vlc wget
+sudo nala install timeshift stacer preload prelink neovim ubuntu-restricted-extras ubuntu-drivers-common tlp curl git vlc wget micro
 
 echo -e "${GREEN}   *** INSTALAÇÃO DE PACOTES BASICOS E DRIVERS CONCLUIDA ***${NC}";sleep 2
-
-#-------------------------------------------------------------------------------------------------------
-
-# Instalando navegador brave
-sudo nala install curl
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-sudo nala update
-sudo nala install brave-browser
-
-echo -e "${GREEN}   *** INSTALAÇÃO NAVEGADOR BRAVE CONCLUIDA ***${NC}";sleep 2
 
 #-------------------------------------------------------------------------------------------------------
 
